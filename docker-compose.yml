@@ -1,0 +1,9 @@
+version: "3"
+services:
+  dailycoding:
+    build: ./
+    image: dailycoding:1.0.0
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./:/develop
