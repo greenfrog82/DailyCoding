@@ -1,3 +1,3 @@
 # DailyCoding
 
-This repository for daily algorithm training!!
+This is the repository for daily algorithm training!!
