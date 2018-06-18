@@ -16,3 +16,9 @@ Output: -1 # -1
 Input: [2, 4, -2, -3, 8]
 Output: 9 # 2 + 4 + (-2) + (-3) + 8
 ```
+
+
+## Reference
+
+* [[Question] 1. 이어지는 원소 구하기](http://bestcoding.tistory.com/13)
+* [가장 큰 이어지는 원소들의 합 구하기](https://tramyu.github.io/algorithm/algorithm-01/)
