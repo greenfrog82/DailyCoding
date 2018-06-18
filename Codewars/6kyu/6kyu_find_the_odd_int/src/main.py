@@ -48,9 +48,12 @@ def other_solution_2(seq):
     import functools
 
     return functools.reduce(operator.xor, seq)
+
+def other_solution_3(seq):
+    return next(x for x in set(seq) if 1 == seq.count(x) % 2)   
     
         
-find_it = other_solution_2
+find_it = other_solution_3
 
 
 class Test(unittest.TestCase):
