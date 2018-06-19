@@ -20,5 +20,6 @@ RUN ln -s /usr/bin/python3.6 /usr/bin/python3
 
 RUN curl -sL https://rpm.nodesource.com/setup_8.x | bash -
 RUN yum -y install nodejs
+RUN npm install --global mocha
 
 WORKDIR /develop

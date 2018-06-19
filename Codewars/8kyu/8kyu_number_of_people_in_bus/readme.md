@@ -1,4 +1,4 @@
-#[8 kyu Number of People in the Bus](https://www.codewars.com/kata/number-of-people-in-the-bus)
+# [8 kyu Number of People in the Bus](https://www.codewars.com/kata/number-of-people-in-the-bus)
 
 Number of people in the bus
 There is a bus moving in the city, and it takes and drop some people in each bus stop.
