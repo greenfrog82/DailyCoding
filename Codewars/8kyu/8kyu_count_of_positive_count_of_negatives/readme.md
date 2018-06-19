@@ -1,4 +1,4 @@
-# [8kyu Count of positives / Sum of negatives]
+# [8kyu Count of positives / Sum of negatives](https://www.codewars.com/kata/count-of-positives-slash-sum-of-negatives)
 
 Given an array of integers.
 
