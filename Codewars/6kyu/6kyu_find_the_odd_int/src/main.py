@@ -52,10 +52,16 @@ def other_solution_2(seq):
 def other_solution_3(seq):
     return next(x for x in set(seq) if 1 == seq.count(x) % 2)   
     
+# This is my bother's solution 
+def solution_ryu(seq):
+    return next(s for s in set(seq) if seq.count(s) % 2 != 0)
+
+def solution_ryu2(seq):
+    from collections import Counter
+    return next(k for k, v in Counter(seq).items() if 0 != v % 2)
+
         
-find_it = other_solution_3
-
-
+find_it = solution_ryu2
 class Test(unittest.TestCase):
     def test_1(self):
         self.assertEqual(find_it([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]), 5)
