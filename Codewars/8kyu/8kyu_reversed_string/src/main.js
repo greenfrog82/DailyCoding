@@ -4,7 +4,11 @@ function mysolution(str) {
     return str.split('').reverse().join('')
 }
 
-const solution = mysolution
+function othersolution(str) {
+    return [...str].reverse().join('')
+}
+
+const solution = othersolution
 
 describe('test', () => {
     it('1', () => {
