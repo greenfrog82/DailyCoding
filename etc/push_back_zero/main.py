@@ -12,12 +12,7 @@ def mysolution(inputs):
                 swap(inputs, i, i+1)
     return inputs
 
-def mysolution2(inputs):
-    for i in range(len(inputs) - 1):
-        if 0 == inputs[i]:
-            swap(inputs, i, i+1)
-
-solution = mysolution2
+solution = mysolution
 
 class Test(unittest.TestCase):
     def test_1(self):
