@@ -5,4 +5,4 @@ pivot을 기준으로 좌측에 pivot보다 작은값, 우측에 pivot보다 큰
 
 ## Reference 
 
-* [Quick Sort](http://ejklike.github.io/2017/03/04/sorting-algorithms-with-python.html)
+* [Computer science in JavaScript: Quicksort](https://www.nczonline.net/blog/2012/11/27/computer-science-in-javascript-quicksort/)
