@@ -46,6 +46,10 @@ def solution(inputs, k):
             tmp = []
 
     return ret
+
+def report(inputs, num):
+    ret = solution(inputs, num)
+    return '[%s]' % ','.join('[%s]' % ','.join(str(item) for item in arr) for arr in ret)
      
     
 class Test(unittest.TestCase):
@@ -64,3 +68,4 @@ class Test(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
