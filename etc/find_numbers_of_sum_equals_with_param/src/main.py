@@ -11,11 +11,11 @@ def method_2(inputs, n):
     return [(k, v) for k,v in dic.items()]
     
 def method_3(inputs, n):
-    # Method 3. O(n) The following code work well when the problem accept duplication.
-    dic = {n-val:val for val in inputs}
-    return [(val, dic[val]) for val in inputs if val in dic]
+    dic = {n-v:v for v in inputs}
+    dic = {k:v for k,v in dic.items() if k < v}
+    return [(v, dic.get(v)) for v in inputs if dic.get(v) and v < dic.get(v)]
 
-find_element = method_2
+find_element = method_3
 
 class Test(unittest.TestCase):
     @classmethod
