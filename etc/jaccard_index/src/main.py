@@ -15,7 +15,7 @@ def jaccard_index(existing_product_name, new_product_name):
     numerator, denominator = get_numerator_denominator(existing_product_name, new_product_name)
     return round(float(len(numerator)) / float(len(denominator)), 4)
 
-def solution(existing_product_names, new_product_name):
+def mysolution(existing_product_names, new_product_name):
     ret = (jaccard_index(existing_product_names[0], new_product_name), existing_product_names[0])
 
     for i in xrange(1, len(existing_product_names)):
@@ -24,6 +24,13 @@ def solution(existing_product_names, new_product_name):
             ret = (j_idx, existing_product_names[i])
 
     return ret[1]
+
+def mysolution2(existing_product_names, new_product_name):
+    jarccard_indices = ((jaccard_index(existing_product_name, new_product_name), existing_product_name) for existing_product_name in existing_product_names)
+    sorted_indices = sorted(jarccard_indices, key=lambda x:x[0])
+    return sorted_indices[-1][1]
+
+solution = mysolution
 
 class Test(unittest.TestCase):
     def test_get_numerator_denominator(self):
