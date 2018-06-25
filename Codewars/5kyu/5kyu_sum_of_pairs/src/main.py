@@ -79,12 +79,13 @@ def mysolution_for_python2(inputs, result):
 
     return most_closest_distance_pair[1]
 
-def othersolution(lst, s):
+def othersolution(inputs, result):
     cache = set()
-    for i in lst:
-        if s - i in cache:
-            return [s - i, i]
-        cache.add(i)
+    for value in inputs:
+        if result - value in cache:
+            return [result-value, value]
+        else:
+            
 
 sum_pairs = othersolution
 
