@@ -59,26 +59,25 @@ def mysolution_for_python2(inputs, result):
     for k in be_deleted_keys.iterkeys():
         del dic[k]
 
-    dic_with_distance = OrderedDict()
+    most_closest_distance_pair = [None,[None,None]]
     for k, v in dic.iteritems():
-        if k == v:
-            last_indices = []
-            last_idx = -1
-            while True:
-                try:
-                    last_idx = inputs.index(k, last_idx + 1) 
-                    last_indices.append(last_idx)
-                except ValueError:
-                    break
-            
-            if 2 <= len(last_indices):
-                dic_with_distance[k] = (v, last_indices[1] - last_indices[0])
-        else:
-            dic_with_distance[k] = (v, inputs.index(v) - inputs.index(k))
+        idx_k = idx_v = -1
+        try:
+            if k == v:
+                for i in xrange(2):
+                    if 0 == i:
+                        idx_k = inputs.index(k, idx_k+1)
+                    else:
+                        idx_v = inputs.index(v, idx_k+1)
+            else:
+                idx_k = inputs.index(k)
+                idx_v = inputs.index(v)
 
-    ret = sorted(dic_with_distance.items(), key=lambda x: x[1])
-    
-    return [ret[-1][0], ret[-1][1][0]]
+            most_closest_distance_pair = most_closest_distance_pair if most_closest_distance_pair[0] is not None and most_closest_distance_pair[0] <= idx_v - idx_k else [idx_v - idx_k, [k, v]]
+        except ValueError:
+            continue
+
+    return most_closest_distance_pair[1]
 
 sum_pairs = mysolution_for_python2
 
@@ -130,8 +129,5 @@ class Test(unittest.TestCase):
 
         sum_pairs(data, 10)
         
-        
-    
-
 if __name__ == '__main__':
    unittest.main() 
