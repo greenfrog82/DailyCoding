@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import sys
+import unittest
+
 if sys.version_info < (3, 0):
   range = xrange
 ​
@@ -28,8 +30,6 @@ class Queue(object):
   def dequeue(self):
     # TODO implement your codes to here.
     return 0
-​
-​
 
 
 class Stack(object):
@@ -51,15 +51,8 @@ class Stack(object):
   def size(self):
     return len(self.items)
 
+class Test(unittest.TestCase):
 
-​
-​
+
 if __name__ == '__main__':
-  queue = Queue()
-  count = int(sys.stdin.readline().strip())
-  for i in range(count):
-    tokens = sys.stdin.readline().strip().split(' ')
-    if tokens[0] == 'ENQUEUE':
-      queue.enqueue(int(tokens[1]))
-    elif tokens[0] == 'DEQUEUE':
-      print(queue.dequeue())
+  unittest.main()    
