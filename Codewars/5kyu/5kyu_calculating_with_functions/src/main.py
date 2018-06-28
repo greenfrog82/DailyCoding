@@ -36,13 +36,13 @@ import unittest
 
 # other solution
 
-zero, one, two, three, four, five, six, seven, eight, nine = (lambda op=None: op(i) if op is not None else i for i in range(10))
+generate_number = lambda num: lambda op=None: op(num) if op is not None else num
+zero, one, two, three, four, five, six, seven, eight, nine = (generate_number(i) for i in range(10))
 
 plus = lambda y: lambda x: x+y
 minus = lambda y: lambda x: x-y
 times = lambda y: lambda x: x*y
 divided_by = lambda y: lambda x: x//y
-
 
 class Test(unittest.TestCase):
     def test_1(self):
