@@ -8,23 +8,35 @@
 import unittest
 
 def solution(player):
-    # <---메인 코드의 시작--->
+    items = set(player)
+    items_len = len(items)
+    
+    if 1 == items_len or 3 == items_len:
+        return 0
+    
+    dic = {1:3,  2:1, 3:2}
 
-		player = [int(choose) for choose in input().split()]  # 각 플레이어의 선택 결과를 입력받는다
-		winner = 0  # 이 변수에 승리하는 사람들의 수를 저장한다
-
-		print(winner)
-    # <---메인 코드의 끝--->
+    item = items.pop()
+    value = dic[item]
+    return player.count(item) if value in items else player.count(dic[value])
+        
 
 class Test(unittest.TestCase):
     def test_1(self):
         self.assertEqual(solution([1, 1, 3, 3, 1]), 3)
 
     def test_2(self):
-        self.assertEqual(solution([2, 3, 2, 2, 3), 2)
+        self.assertEqual(solution([2, 3, 2, 2, 3]), 2)
 
     def test_3(self):
-        self.assertEqual(solution([2,2,2,2,2], 0))
+        self.assertEqual(solution([2,2,2,2,2]), 0)
+
+    def test_4(self):
+        self.assertEqual(solution([1,2,3,1,2]), 0)
+
+
+if __name__ == '__main__':
+    unittest.main()
 
 
     
