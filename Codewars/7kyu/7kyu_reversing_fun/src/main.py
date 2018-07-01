@@ -1,16 +1,20 @@
 import unittest
 
-def mysolution(n):
-    length = len(n)
-    n = [n[i] for i in xrange(length-1, -1, -1)]
-    
-    for i in xrange(1, length-1):
-        for j in xrange((length-i)//2):
-            n[i+j], n[-(j+1)] = n[-(j+1)], n[i+j]
-    return ''.join(n)
-            
-reverse_fun = mysolution
+def mysolution(arr):
+    ret = []
+    f_offset = 0
+    b_offset = -1
+    for i in xrange(int(round(len(arr)/float(2)))):
+        if i == len(arr)/2:
+            ret.append(arr[b_offset])
+        else:
+            ret.append(arr[b_offset])
+            b_offset -= 1
+            ret.append(arr[f_offset])
+            f_offset += 1
+    return ''.join(ret)
 
+reverse_fun = mysolution
 
 class Test(unittest.TestCase):
     def test_1(self):
