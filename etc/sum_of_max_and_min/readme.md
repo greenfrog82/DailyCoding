@@ -41,3 +41,8 @@
 ```
 102634359
 ```
+
+
+## Reference
+
+* [가장 큰 수 만들기](http://codingdojang.com/scode/501)
