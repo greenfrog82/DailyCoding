@@ -10,7 +10,10 @@ def mysolution(inputStr):
 def othersolution(inputStr):
     return sum(c in 'aeiou' for c in inputStr)
 
-getCount = othersolution
+def othersolution2(inputStr):
+    return sum(1 for ch in inputStr if ch in 'aeiou')
+
+getCount = othersolution2
 
 class Test(unittest.TestCase):
     def test_1(self):
