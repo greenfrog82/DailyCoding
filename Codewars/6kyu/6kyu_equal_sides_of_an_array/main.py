@@ -1,9 +1,24 @@
 import unittest
 
 def mysolution(arr):
-    pass
-    
-find_even_index = mysolution
+    for i in xrange(len(arr) - 1):
+        if 0 == i == sum(arr[i+1:]):
+            return 0
+        else:
+            left_sum = sum(arr[:1+i])
+            right_sum = sum(arr[i+2:])
+
+            if left_sum == right_sum:
+                return i+1
+    return -1
+
+def othersolution(arr):
+    for i in xrange(len(arr)):
+        if sum(arr[:i]) == sum(arr[i+1:]):
+            return i
+    return -1
+
+find_even_index = othersolution
 
 class Test(unittest.TestCase):
     def test_1(self):
