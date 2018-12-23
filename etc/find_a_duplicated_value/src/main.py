@@ -9,6 +9,14 @@ def mysolution(inputs):
             return value
     return -1
 
+def mysolution2(inputs):
+    for num in inputs:
+        if num in set_:
+            return num
+        else:
+            set_.add(num)
+    return -1
+
 solution = mysolution2
 
 class TestCase(unittest.TestCase):
